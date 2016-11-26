@@ -144,5 +144,3 @@ int main(int argc, char const *argv[])
 	} while (opcion!=9);
 	return 0;
 }
-
-
