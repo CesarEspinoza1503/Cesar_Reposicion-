@@ -8,7 +8,8 @@ GCD::GCD(){
 int GCD::getDivisor(int n, int d){
 	int menor;
 	int mayor;
-	int temp;
+	int temp_menor;
+	int temp_mayor;
 	if(n < d){
 		menor = n;
 		mayor = d;
@@ -20,20 +21,18 @@ int GCD::getDivisor(int n, int d){
 	if(n == d){
 		return n;
 	}
-
-	for (int i = 0; i <= menor; ++i)
+	for (int i = 1; i <= menor; ++i)
 	{
-		if(menor % i == 0){
-			temp = menor;
-		}
-	}
-	for (int i = 0; i <= mayor; ++i)
-	{
-		int residuo =mayor % i;
-		if (residuo == temp)
+		temp_menor = i * menor;
+		for (int i = 1; i <= mayor; ++i)
 		{
-			return temp;
+			temp_mayor = i *mayor;	
+		}
+		if (temp_mayor == temp_menor)
+		{
+			return temp_menor;
 		}
 	}
-	return -1;
+
+	return 0;
 }
